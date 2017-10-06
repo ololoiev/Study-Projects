@@ -1,4 +1,4 @@
-package lesson1;
+package lesson1.classwork;
 
 public class Main {
    static WriteObject writeable[] = {new Pan(), new CoolPan()};

@@ -1,11 +1,12 @@
-package lesson1;
+package lesson1.classwork;
 
 public class CoolPan extends Pan{
-    public CoolPan(int times) {
-        super(times);
-    }
 
     public CoolPan() {
+    }
+
+    public CoolPan(int times) {
+        super(times);
     }
 
     @Override

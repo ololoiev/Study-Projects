@@ -1,4 +1,4 @@
-package lesson1;
+package lesson1.classwork;
 
 public abstract class WriteObject implements Writeable {
 

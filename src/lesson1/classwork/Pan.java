@@ -1,7 +1,14 @@
-package lesson1;
+package lesson1.classwork;
 
 public class Pan extends WriteObject{
     private int times = 100;
+
+    public Pan() {
+    }
+
+    public Pan(int times) {
+        this.times = times;
+    }
 
     @Override
     public void write(String s) {
@@ -10,13 +17,6 @@ public class Pan extends WriteObject{
         }else{
             System.out.println("I cant wrote.");
         }
-    }
-
-    public Pan(int times) {
-        this.times = times;
-    }
-
-    public Pan() {
     }
 
     public int getTimes() {
