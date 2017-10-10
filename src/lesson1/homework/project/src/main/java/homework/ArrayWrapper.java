@@ -1,4 +1,4 @@
-package lesson1.homework.project.src.main.java.homework;
+package homework;
 
 
 import homework.state.*;

@@ -1,4 +1,4 @@
-package lesson1.homework.project.src.main.java.homework.state;
+package homework.state;
 
 import homework.ArrayWrapper;
 
