@@ -1,8 +1,8 @@
 package homework.state;
 
 
-import homework.ArrayWrapper;
 import homework.ArrayWrappers;
+import homework.ArrayWrapper;
 
 public class PrintState implements State{
     private ArrayWrapper arrayWrapper;
@@ -27,6 +27,7 @@ public class PrintState implements State{
         CHOICE_1{
             @Override
             public boolean choice(ArrayWrapper wrapper){
+                System.out.println();
                 ArrayWrappers.print(wrapper);
                 return true;
             }
@@ -35,6 +36,7 @@ public class PrintState implements State{
         CHOICE_2{
             @Override
             public boolean choice(ArrayWrapper wrapper){
+                System.out.println();
                 ArrayWrappers.reversPrint(wrapper);
                 return true;
             }
@@ -43,6 +45,7 @@ public class PrintState implements State{
         CHOICE_3{
             @Override
             public boolean choice(ArrayWrapper wrapper){
+                System.out.println();
                 ArrayWrappers.sortedPrint(wrapper);
                 return true;
             }
