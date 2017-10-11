@@ -44,7 +44,7 @@ public class SearchState implements State{
             @Override
             public boolean choice(ArrayWrapper wrapper){
                 System.out.println("Введите заменяющее значение: ");
-                int value = getNumber();
+                int value = getUniqueNumber(wrapper);
                 System.out.println("Введите позицию: ");
                 int position = getPosition(wrapper);
                 return replaceElement(wrapper, value, position);
