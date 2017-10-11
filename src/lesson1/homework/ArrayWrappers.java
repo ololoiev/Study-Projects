@@ -7,6 +7,7 @@ import java.util.Arrays;
 
 public class ArrayWrappers {
     public static void print(ArrayWrapper wrapper){
+
         for (int value : wrapper.getArray()) {
             System.out.println(value);
         }
@@ -56,6 +57,18 @@ public class ArrayWrappers {
                 e.printStackTrace();
             }catch (NumberFormatException e){
                 System.out.println("Введиие целое число:");
+            }
+        }
+    }
+
+    public static int getUniqueNumber(ArrayWrapper wrapper){
+        int uniqueNumber;
+        while (true){
+            uniqueNumber = getNumber();
+            if(!isContain(wrapper, uniqueNumber)){
+                return uniqueNumber;
+            }else {
+                System.out.println("Это число уже есть, введите другое.\n");
             }
         }
     }
