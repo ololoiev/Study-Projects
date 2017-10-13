@@ -1,9 +1,8 @@
 package lesson2.classwork.object;
 
-import lesson2.classwork.string.Testable;
+import lesson2.classwork.Testable;
 
 import java.util.Arrays;
-import java.util.HashSet;
 import java.util.Set;
 
 public class CarSetTest implements Testable {

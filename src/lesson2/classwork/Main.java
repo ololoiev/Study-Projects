@@ -4,7 +4,6 @@ package lesson2.classwork;
 import lesson2.classwork.object.CarListTest;
 import lesson2.classwork.object.CarMapTest;
 import lesson2.classwork.object.CarSetTest;
-import lesson2.classwork.string.Testable;
 
 import java.util.*;
 

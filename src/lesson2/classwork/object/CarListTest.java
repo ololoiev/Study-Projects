@@ -1,8 +1,7 @@
 package lesson2.classwork.object;
 
-import lesson2.classwork.string.Testable;
+import lesson2.classwork.Testable;
 
-import java.util.LinkedList;
 import java.util.List;
 
 public class CarListTest implements Testable{

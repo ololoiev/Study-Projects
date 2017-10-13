@@ -1,10 +1,11 @@
 package lesson2.classwork.string;
 
-import java.util.ArrayList;
+import lesson2.classwork.Testable;
+
 import java.util.LinkedList;
 import java.util.List;
 
-public class StringListTest implements Testable{
+public class StringListTest implements Testable {
 
     private String[] array = {"Ferrary" , "BMW"};
 

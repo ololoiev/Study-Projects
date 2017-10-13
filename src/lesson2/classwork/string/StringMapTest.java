@@ -1,8 +1,9 @@
 package lesson2.classwork.string;
 
+import lesson2.classwork.Testable;
+
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Random;
 
 public class StringMapTest implements Testable {
 

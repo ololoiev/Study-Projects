@@ -1,11 +1,8 @@
 package lesson2.classwork.object;
 
-import lesson2.classwork.string.Testable;
+import lesson2.classwork.Testable;
 
-import java.util.Comparator;
-import java.util.HashMap;
 import java.util.Map;
-import java.util.TreeMap;
 
 public class CarMapTest implements Testable {
 

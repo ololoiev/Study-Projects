@@ -1,5 +1,7 @@
 package lesson2.classwork.string;
 
+import lesson2.classwork.Testable;
+
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
