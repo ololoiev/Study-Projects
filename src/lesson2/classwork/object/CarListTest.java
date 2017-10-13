@@ -5,14 +5,17 @@ import lesson2.classwork.string.Testable;
 import java.util.LinkedList;
 import java.util.List;
 
-public class StringListTest implements Testable{
+public class CarListTest implements Testable{
 
     private Car[] cars = {new Car(1, "Ferary", 1.7),
                             new Car(2, "BMW", 2.6),
                             new Car(3, "Ferary", 1.4)};
 
-    private List list = new LinkedList();
+    private List list;
 
+    public CarListTest(List list) {
+        this.list = list;
+    }
 
     @Override
     public void test() {
@@ -21,6 +24,7 @@ public class StringListTest implements Testable{
     }
 
     private void printListEntrie(List list){
+        System.out.println("\nList output");
         for (int i = 0; i< list.size(); i++){
             System.out.println("Entry #" + i + ": " + list.get(i));
         }

@@ -23,11 +23,11 @@ public class StringMapTest implements Testable {
         }
     }
 
-    private void printMapEntrie(Map map){
-//        for (Map.Entry<String, Integer> entry: map.entrySet()
-//             ) {
-//            System.out.println("Item: " + entry.getKey() + ", number: " + entry.getValue());
-//        }
+    private void printMapEntrie(Map<String, Integer> map){
+        for (Map.Entry<String, Integer> entry: map.entrySet()
+             ) {
+            System.out.println("Item: " + entry.getKey() + ", number: " + entry.getValue());
+        }
         System.out.println("Size: " + map.size());
         System.out.println("Length: " + array.length);
     }

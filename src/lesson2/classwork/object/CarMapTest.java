@@ -2,16 +2,22 @@ package lesson2.classwork.object;
 
 import lesson2.classwork.string.Testable;
 
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
-public class StringMapTest implements Testable {
+public class CarMapTest implements Testable {
 
     private Car[] cars = {new Car(1, "Ferary", 1.7),
             new Car(2, "BMW", 2.6),
             new Car(3, "Ferary", 1.4)};
 
-    private Map<String, Car> testMap = new HashMap<String, Car>();
+    private Map<String, Car> testMap;
+
+    public CarMapTest(Map<String, Car> testMap) {
+        this.testMap = testMap;
+    }
 
     @Override
     public void test() {
@@ -27,6 +33,7 @@ public class StringMapTest implements Testable {
     }
 
     private void printMapEntrie(Map<String, Car> map){
+        System.out.println("\nMap output");
         for(Map.Entry<String, Car> entry: map.entrySet()){
             System.out.println("Item: " + entry.getValue());
         }

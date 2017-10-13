@@ -6,12 +6,16 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-public class StringSetTest implements Testable {
+public class CarSetTest implements Testable {
 
     private Car[] cars = {new Car(1, "Ferary", 1.7),
             new Car(2, "BMW", 2.6),
             new Car(3, "Ferary", 1.4)};
-    private Set set = new HashSet();
+    private Set set;
+
+    public CarSetTest(Set set) {
+        this.set = set;
+    }
 
     @Override
     public void test() {
@@ -20,6 +24,7 @@ public class StringSetTest implements Testable {
     }
 
     private void printMapEntrie(Set set) {
+        System.out.println("\nSet output");
         for (int i = 0; i< set.size(); i++){
             System.out.println("Entry #" + i + ": " + set.toArray()[i]);
         }
