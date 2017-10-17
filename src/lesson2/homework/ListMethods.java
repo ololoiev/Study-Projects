@@ -1,6 +1,8 @@
 package lesson2.homework;
 
 
+import com.sun.xml.internal.bind.v2.TODO;
+
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -13,52 +15,41 @@ public class ListMethods {
                 maxValue = value;
             }
         }
-
-        for (Iterator<TestObject> it = list.iterator(); it.hasNext(); ) {
-            TestObject object = it.next();
-            if(object.getValue() == maxValue){
-                it.remove();
+        List<TestObject> newList = new ArrayList<>();
+        for (TestObject object : list) {
+            if (object.getValue() != maxValue) {
+                newList.add(object);
             }
         }
-        return list;
+        return newList;
     }
 
     public static List<TestObject> streamDeleteMaxValues(List<TestObject> list){
-        int max = list.stream()
+        return list.stream()
+                .filter(testObject -> testObject.getValue()!=findMax(list))
+                .collect(Collectors.toList());
+    }
+
+    public static List<TestObject> deleteLessThan(List<TestObject> list, int value){
+        List<TestObject> newList = new ArrayList<>();
+        for (TestObject object : list) {
+            if (object.getValue() >= value) {
+                newList.add(object);
+            }
+        }
+        return newList;
+    }
+
+    public static List<TestObject> streamDeleteLessThan(List<TestObject> list, int value) {
+        return list.stream()
+                .filter(o -> o.getValue() >= value)
+                .collect(Collectors.toList());
+    }
+
+    private static int findMax(List<TestObject> list){
+        return list.stream()
                 .mapToInt(TestObject::getValue)
                 .max().getAsInt();
-
-        return list.stream()
-                .filter(testObject -> testObject.getValue()!=max)
-                .collect(Collectors.toList());
-    }
-
-    public static List<TestObject> deleteMinValues(List<TestObject> list){
-        int minValue = Integer.MAX_VALUE;
-        for(int i = 0; i < list.size(); i++){
-            int value = list.get(i).getValue();
-            if (value<minValue){
-                minValue = value;
-            }
-        }
-
-        for (Iterator<TestObject> it = list.iterator(); it.hasNext(); ) {
-            TestObject object = it.next();
-            if(object.getValue() == minValue){
-                it.remove();
-            }
-        }
-        return list;
-    }
-
-    public static List<TestObject> streamDeleteMinValues(List<TestObject> list){
-        int min = list.stream()
-                .mapToInt(TestObject::getValue)
-                .min().getAsInt();
-
-        return list.stream()
-                .filter(testObject -> testObject.getValue()!=min)
-                .collect(Collectors.toList());
     }
 
     public static int valuesSum(List<TestObject> list){
@@ -76,7 +67,7 @@ public class ListMethods {
     }
 
     public static TestObject getThirdElement(List<TestObject> list){
-        return list.get(3);
+        return list.get(2);
     }
 
     public static TestObject streamGetThirdElement(List<TestObject> list){
@@ -90,8 +81,8 @@ public class ListMethods {
     public static ArrayList<TestObject> getSecondAndThirdElements(List<TestObject> list) {
         return new ArrayList<TestObject>
                 (Arrays.asList(
-                        list.get(2),
-                        list.get(3)));
+                        list.get(1),
+                        list.get(2)));
     }
 
     public static List<TestObject> streamGetSecondAndThirdElements(List<TestObject> list){
@@ -168,6 +159,16 @@ public class ListMethods {
                 .sorted(Comparator.comparing(TestObject::getName))
                 .sorted(Comparator.comparingInt(TestObject::getValue))
                 .collect(Collectors.toList());
+    }
+
+    public static List<TestObject> getList() {
+        return Arrays.asList(new TestObject("Kred", 5),
+                new TestObject("Ards", 1),
+                new TestObject("Tr", 5),
+                new TestObject("Mordor", 101),
+                new TestObject("Dord", 5),
+                new TestObject("Ewarde", 9),
+                new TestObject("Taer", 101));
     }
 
 }
