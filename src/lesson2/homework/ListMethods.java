@@ -15,19 +15,13 @@ public class ListMethods {
                 maxValue = value;
             }
         }
-
         List<TestObject> newList = new ArrayList<>();
-
         for (TestObject object : list) {
-            if (object.getValue() == maxValue) {
+            if (object.getValue() != maxValue) {
                 newList.add(object);
             }
         }
-
-        for(TestObject object: newList){
-            list.remove(object);
-        }
-        return list;
+        return newList;
     }
 
     public static List<TestObject> streamDeleteMaxValues(List<TestObject> list){
