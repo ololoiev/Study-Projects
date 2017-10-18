@@ -145,27 +145,26 @@ public class MapMethods {
     }
 
     public static Map<String, TestObject> hardSort(Map<String, TestObject> map){
-        TreeMap<String, TestObject> newMap = new TreeMap<String, TestObject>(map);
-        List<Map.Entry<String, TestObject>> list = new LinkedList<>(map.entrySet());
-        Collections.sort( list, new Comparator<Map.Entry<String, TestObject>>() {
-            @Override
-            public int compare(Map.Entry<String, TestObject> o1, Map.Entry<String, TestObject> o2) {
-                return (o1.getValue().getValue())-(o2.getValue().getValue());
-            }
-        });
-
-        Map<String, TestObject> result = new LinkedHashMap<>();
-        for (Map.Entry<String, TestObject> entry : list) {
-            result.put(entry.getKey(), entry.getValue());
+        List<TestObject> list = new  ArrayList<TestObject>();
+        for (TestObject object: map.values()){
+            list.add(object);
         }
-        return result;
+        ListMethods.hardSort(list);
+        map = new LinkedHashMap<String, TestObject>();
+        for (TestObject object : list) {
+            map.put(object.getName(), object);
+        }
+        return map;
     }
 
     public static Map<String, TestObject> streamHardSort(Map<String, TestObject> map) {
         return map.values().stream()
                 .sorted(Comparator.comparing(TestObject::getName))
                 .sorted(Comparator.comparingInt(TestObject::getValue))
-                .collect(Collectors.toMap(o -> o.getName(), o->o));
+                .collect(Collectors.toMap(o -> o.getName(),
+                        o -> o,
+                        (v1,v2)->v1,
+                        LinkedHashMap::new));
     }
 
 
