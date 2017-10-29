@@ -12,7 +12,7 @@ public class CarSetTest implements Testable {
             new Car(3, "Ferary", 1.4)};
     private Set set;
 
-    public CarSetTest(Set set) {
+    public CarSetTest(Set<Car> set) {
         this.set = set;
     }
 
@@ -22,7 +22,7 @@ public class CarSetTest implements Testable {
         printMapEntrie(set);
     }
 
-    private void printMapEntrie(Set set) {
+    private void printMapEntrie(Set<Car> set) {
         System.out.println("\nSet output");
         for (int i = 0; i< set.size(); i++){
             System.out.println("Entry #" + i + ": " + set.toArray()[i]);
